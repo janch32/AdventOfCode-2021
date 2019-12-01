@@ -10,9 +10,9 @@ require("fs")
     .readFileSync("input")
     .toString()
     .split("\n")
-    .map((val) => parseInt(val, 10))
-    .forEach((mass) => {
-        let fuel = calculateFuel(mass);
+    .map((mass) => parseInt(mass, 10))
+    .map((mass) => calculateFuel(mass))
+    .forEach((fuel) => {
         fuelFirst += fuel;
         
         do fuelSecond += fuel;
@@ -21,4 +21,3 @@ require("fs")
 
 console.log("Solution 1:", fuelFirst);
 console.log("Solution 2:", fuelSecond);
-
